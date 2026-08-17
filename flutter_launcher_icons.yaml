@@ -1,0 +1,13 @@
+flutter_launcher_icons:
+  android: "launcher_icon"
+  # ios: true عشان مفيش في المشروع فلازم اشيله عشان ميعملش ايرور 
+
+  # Full-bleed square icon used for iOS and legacy Android launcher icon
+  image_path: "assets/icon/app_icon.png"
+
+  # ---- Android adaptive icon (Android 8.0+, required look on Android 12+) ----
+  min_sdk_android: 21
+  adaptive_icon_background: "#0C211E"          # deep teal, matches app background
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+
+  remove_alpha_ios: true

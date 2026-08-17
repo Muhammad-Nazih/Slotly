@@ -1,0 +1,25 @@
+flutter_native_splash:
+  # Background color for classic splash (all Android versions + iOS)
+  # Matches the dark teal/black background of the SlotBook app
+  color: "#081512"
+
+  # Main splash image (transparent PNG, works for classic Android/iOS splash)
+  image: assets/splash/splash_icon.png
+
+  # ---- Android 12+ specific settings ----
+  android_12:
+    # Background color behind the icon on Android 12's native splash
+    color: "#081512"
+
+    # Icon shown inside the Android 12 splash circle.
+    # Must be sized 1152x1152 with content centered in the safe zone (~768px)
+    # so it isn't clipped by the circular mask — this file is already sized that way.
+    image: assets/splash/splash_icon.png
+
+  # Set to true if you also want the splash on Android/iOS to fit fullscreen
+  fullscreen: true
+
+  # Android: keep the app icon adaptive/consistent, don't touch launcher icon
+  android: true
+  ios: true
+  web: false
