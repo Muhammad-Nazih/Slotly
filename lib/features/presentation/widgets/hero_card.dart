@@ -48,9 +48,12 @@ class HeroCard extends StatelessWidget {
           GestureDetector(
             onTap: onPressed,
             child: MouseRegion(
-            cursor: SystemMouseCursors.click,
+              cursor: SystemMouseCursors.click,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 13),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 26,
+                  vertical: 13,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.blue,
                   borderRadius: BorderRadius.circular(12),
