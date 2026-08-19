@@ -1,3 +1,5 @@
+import 'package:web/web.dart' as web;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:new47version/core/colors.dart';
@@ -11,31 +13,42 @@ class TopBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                color: AppColors.blue,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Icon(
-                Icons.calendar_month_rounded,
-                size: 18,
-                color: Colors.black,
-              ),
+        GestureDetector(
+          onTap: () {
+            if (kIsWeb) {
+              // Reload the page on web
+              web.window.location.reload();
+            }
+          },
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Row(
+              children: [
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: AppColors.blue,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.calendar_month_rounded,
+                    size: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                const Gap(8),
+                const Text(
+                  'Slotly',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
-            const Gap(8),
-            const Text(
-              'SlotBook',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ],
+          ),
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),

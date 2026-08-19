@@ -22,4 +22,4 @@ flutter_native_splash:
   # Android: keep the app icon adaptive/consistent, don't touch launcher icon
   android: true
   ios: true
-  web: false
+  web: true

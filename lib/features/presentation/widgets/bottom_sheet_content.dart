@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:new47version/core/colors.dart';
@@ -253,10 +254,6 @@ class _BottomSheetContentState extends State<BottomSheetContent> {
 
                                       Navigator.pop(context);
 
-                                      // نرجّعها false بعد الإغلاق، عشان
-                                      // لو المستخدم فتح شيت تاني بعدين
-                                      // يبدأ من الأول من غير ما يفضل
-                                      // "جارٍ الحجز..." معلّق من مرة فاتت.
                                       _isBooking = false;
 
                                       showDialog(
@@ -370,7 +367,7 @@ class _BottomSheetContentState extends State<BottomSheetContent> {
                               borderColor: Colors.grey.shade700,
                               label: 'إلغاء',
                               fontSize: 20,
-                            fontWeight: .w500,
+                              fontWeight: .w500,
                             ),
                           ),
                         ],

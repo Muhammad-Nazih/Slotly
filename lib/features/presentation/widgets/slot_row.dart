@@ -106,33 +106,36 @@ class _SlotRowState extends State<SlotRow> {
                 );
               }
             },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              decoration: BoxDecoration(
-                color: booked ? AppColors.grey : AppColors.blueeeeeeeeeeeee,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (booked) ...[
-                    const Icon(
-                      Icons.lock_outline,
-                      size: 13,
-                      color: AppColors.textGrey,
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: booked ? AppColors.grey : AppColors.blueeeeeeeeeeeee,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (booked) ...[
+                      const Icon(
+                        Icons.lock_outline,
+                        size: 13,
+                        color: AppColors.textGrey,
+                      ),
+                      const Gap(5),
+                    ],
+                    Text(
+                      booked ? 'محجوز' : 'احجز',
+                      style: TextStyle(
+                        color: booked ? AppColors.textGrey : Colors.black,
+                        fontSize: 12.5,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: arabicFontFamily,
+                      ),
                     ),
-                    const Gap(5),
                   ],
-                  Text(
-                    booked ? 'محجوز' : 'احجز',
-                    style: TextStyle(
-                      color: booked ? AppColors.textGrey : Colors.black,
-                      fontSize: 12.5,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: arabicFontFamily,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),

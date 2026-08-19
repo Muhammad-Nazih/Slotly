@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new47version/core/colors.dart';
 import 'package:new47version/core/consts.dart';
 
 class DayHeader extends StatelessWidget {
@@ -25,10 +24,10 @@ class DayHeader extends StatelessWidget {
       crossAxisAlignment: .start,
       children: [
         text,
-        const Text(
+        Text(
           'الحجز يتوقف قبل الميعاد بـــ 60 دقيقة',
           style: TextStyle(
-            color: AppColors.textFaint,
+            color: Colors.grey.shade400,
             fontSize: 11,
             fontFamily: arabicFontFamily,
           ),

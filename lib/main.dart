@@ -30,9 +30,33 @@ class Slotly extends StatelessWidget {
           selectionHandleColor: AppColors.blue,
         ),
       ),
-      home: const Directionality(
+      home: Directionality(
         textDirection: TextDirection.rtl,
-        child: BookingScreen(),
+        child: Scaffold(
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF042F2E),
+                  Color(0xFF000000),
+                  Color(0xFF0E7490),
+                  Color(0xFF000000),
+                  Color(0xFF042F2E),
+                ],
+              ),
+            ),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 1200),
+                child: BookingScreen(),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

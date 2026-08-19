@@ -47,32 +47,35 @@ class HeroCard extends StatelessWidget {
           const Gap(22),
           GestureDetector(
             onTap: onPressed,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 13),
-              decoration: BoxDecoration(
-                color: AppColors.blue,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'شوف المواعيد',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 24,
-                      fontFamily: arabicFontFamily,
+            child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 13),
+                decoration: BoxDecoration(
+                  color: AppColors.blue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Text(
+                      'شوف المواعيد',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 24,
+                        fontFamily: arabicFontFamily,
+                      ),
                     ),
-                  ),
-                  Gap(6),
-                  Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: Colors.black,
-                    size: 24,
-                    fontWeight: .bold,
-                  ),
-                ],
+                    Gap(6),
+                    Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: Colors.black,
+                      size: 24,
+                      fontWeight: .bold,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
