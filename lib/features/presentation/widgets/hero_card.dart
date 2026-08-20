@@ -5,13 +5,16 @@ import 'package:new47version/core/consts.dart';
 
 class HeroCard extends StatelessWidget {
   final VoidCallback onPressed;
-
   const HeroCard({super.key, required this.onPressed});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.sizeOf(context).height * 0.33,
+      constraints: BoxConstraints(
+        minHeight: MediaQuery.sizeOf(context).height * 0.33,
+      ),
+      // height: MediaQuery.sizeOf(context).height * 0.33,
       padding: const EdgeInsets.symmetric(vertical: 34, horizontal: 24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),

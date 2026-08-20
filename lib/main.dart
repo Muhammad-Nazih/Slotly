@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new47version/core/app_scroll_behavior.dart';
 import 'package:new47version/core/colors.dart';
 import 'package:new47version/core/consts.dart';
 import 'package:new47version/features/presentation/booking_screen.dart';
@@ -22,6 +23,7 @@ class Slotly extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Slotly',
+      scrollBehavior: AppScrollBehavior(),
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.bg,
         fontFamily: arabicFontFamily,
