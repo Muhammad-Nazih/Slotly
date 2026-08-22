@@ -1,18 +1,21 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:new47version/core/colors.dart';
 import 'package:new47version/core/consts.dart';
 import 'package:new47version/features/presentation/widgets/custom_button.dart';
+import 'package:new47version/features/presentation/widgets/slot_row.dart';
 
 class BottomSheetContent extends StatefulWidget {
   const BottomSheetContent({
     super.key,
     required this.validateName,
     required this.validateEgyptianPhone,
+    required this.date,
+    required this.slot,
   });
-
+  final DateTime date;
+  final Slot slot;
   final String? Function(String?)? validateName;
   final String? Function(String?)? validateEgyptianPhone;
 
@@ -36,6 +39,10 @@ class _BottomSheetContentState extends State<BottomSheetContent> {
 
   @override
   Widget build(BuildContext context) {
+    final String dateText =
+        '${arabicDays[widget.date.weekday - 1]} '
+        '${widget.date.day} '
+        '${arabicMonths[widget.date.month - 1]}';
     return Directionality(
       textDirection: TextDirection.rtl,
       child: ClipRRect(
@@ -87,13 +94,26 @@ class _BottomSheetContentState extends State<BottomSheetContent> {
                           fontFamily: arabicFontFamily,
                         ),
                       ),
-                      Text(
-                        'السبت 1 أغسطس 10:00 ص',
-                        style: TextStyle(
-                          color: Colors.grey.shade400,
-                          fontSize: 17,
-                          fontFamily: arabicFontFamily,
-                        ),
+                      Row(
+                        children: [
+                          Text(
+                            dateText,
+                            style: TextStyle(
+                              color: Colors.grey.shade400,
+                              fontSize: 17,
+                              fontFamily: arabicFontFamily,
+                            ),
+                          ),
+                          const Gap(8),
+                          Text(
+                            '-  ${widget.slot.time} ${widget.slot.meridiem}',
+                            style: TextStyle(
+                              color: Colors.grey.shade400,
+                              fontSize: 17,
+                              fontFamily: arabicFontFamily,
+                            ),
+                          ),
+                        ],
                       ),
                       const Gap(20),
                       Text(

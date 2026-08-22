@@ -10,12 +10,17 @@ class Slot {
   final String time;
   final String meridiem;
   final SlotStatus status;
-  const Slot(this.time, this.meridiem, this.status);
+  const Slot({
+    required this.time,
+    required this.meridiem,
+    required this.status,
+  });
 }
 
 class SlotRow extends StatefulWidget {
   final Slot slot;
-  const SlotRow({super.key, required this.slot});
+  final DateTime date;
+  const SlotRow({super.key, required this.slot, required this.date});
 
   @override
   State<SlotRow> createState() => _SlotRowState();
@@ -53,6 +58,7 @@ class _SlotRowState extends State<SlotRow> {
   @override
   Widget build(BuildContext context) {
     final booked = widget.slot.status == SlotStatus.booked;
+    final selectedDate = widget.date;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -99,6 +105,8 @@ class _SlotRowState extends State<SlotRow> {
                   ),
                   builder: (context) {
                     return BottomSheetContent(
+                      date: selectedDate,
+                      slot: widget.slot,
                       validateName: validateName,
                       validateEgyptianPhone: validateEgyptianPhone,
                     );
@@ -109,7 +117,10 @@ class _SlotRowState extends State<SlotRow> {
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
                 decoration: BoxDecoration(
                   color: booked ? AppColors.grey : AppColors.blueeeeeeeeeeeee,
                   borderRadius: BorderRadius.circular(12),

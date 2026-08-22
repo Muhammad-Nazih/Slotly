@@ -54,7 +54,7 @@ class _BookingScreenState extends State<BookingScreen> {
         ...slots.map(
           (s) => Padding(
             padding: const EdgeInsets.only(bottom: 12),
-            child: SlotRow(slot: s),
+            child: SlotRow(slot: s, date: selectedDate),
           ),
         ),
       ],
